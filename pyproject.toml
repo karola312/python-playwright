@@ -1,0 +1,26 @@
+[tool.poetry]
+authors = ["Karolina Rakoczy <rakoczy.karolina@gmail.com>"]
+description = "Playwright Python job interview project with pytest"
+keywords = ["playwright", "automation", "testing"]
+name = "python-playwright"
+packages = [{include = "playwright_python"}]
+readme = "README.md"
+version = "0.1.0"
+
+[tool.poetry.dependencies]
+playwright = "1.51.0"
+pytest = "8.3.5"
+pytest-base-url = "2.1.0"
+pytest-playwright = "0.7.0"
+python = "^3.11"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core"]
+
+[tool.pytest.ini_options]
+addopts = [
+  "--headed"
+]
+base_url = 'https://www.saucedemo.com/'
+log_cli = true
