@@ -12,6 +12,5 @@ class TestLogin:
         self.login_page = LoginPage(page)
 
     def test_correct_login(self, page: Page):
-        # self.login_page.login(User.STANDARD_USER, "secret_sauce")
-        # expect(Header(page).cart_button).to_be_enabled()
-        pass
+        self.login_page.login(User.STANDARD_USER, "secret_sauce")
+        expect(Header(page).cart_button).to_be_enabled()

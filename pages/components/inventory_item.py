@@ -8,9 +8,8 @@ class InventoryItem:
 
     def __init__(self, item: Locator):
         self.item = item
-        self.add_to_cart_button = item.locator(
-            "//*[contains(@data-test,'add-to-cart')]"
-        )
+        add_to_cart_button_xpath = "//*[contains(@data-test,'add-to-cart')]"
+        self.add_to_cart_button = item.locator(add_to_cart_button_xpath)
         self.name = item.get_by_test_id("inventory-item-name").text_content()
         self.price = item.get_by_test_id("inventory-item-price").text_content()
 
@@ -18,4 +17,5 @@ class InventoryItem:
         self.add_to_cart_button.click()
 
     def get_remove_button(self):
-        return self.item.locator("//button[contains(@data-test,'remove')]")
+        remove_button_xpath = "//button[contains(@data-test,'remove')]"
+        return self.item.locator(remove_button_xpath)
